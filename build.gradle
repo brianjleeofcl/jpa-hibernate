@@ -30,6 +30,12 @@ dependencies {
     compile 'org.postgresql:postgresql:42.1.4.jre7'
 }
 
+run {
+    if (project.hasProperty("appArgs")) {
+        args Eval.me(appArgs)
+    }
+}
+
 // Define the main class for the application
 mainClassName = 'App'
 
